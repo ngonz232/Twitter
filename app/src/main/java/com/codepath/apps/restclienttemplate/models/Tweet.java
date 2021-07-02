@@ -43,15 +43,32 @@ public class Tweet {
             tweet.body = tweet.body + "" + jsonObject.getJSONObject("entities").getJSONArray("urls").getJSONObject(0).getString("url");
         }
 
-        if (jsonObject.has("extended_entities")) {
-            JSONArray mediaObjects = jsonObject.getJSONObject("extended_entities").getJSONArray("media");
-            for (int i = 0; i < mediaObjects.length(); i++) {
-                tweet.imageUrls.add(mediaObjects.getJSONObject(i).getString("media_url_https"));
-            }
-        }else{
-            tweet.imageUrls = new ArrayList<>();
-        }
+//        if (jsonObject.has("extended_entities")) {
+//            if (jsonObject.getJSONObject("extended_entities").has("media")) {
+//                JSONArray mediaObjects = jsonObject.getJSONObject("extended_entities").getJSONArray("media");
+//                for (int i = 0; i < mediaObjects.length(); i++) {
+//                    tweet.imageUrls.add(mediaObjects.getJSONObject(i).getString("media_url_https"));
+//
+//            }
+////            JSONArray mediaObjects = jsonObject.getJSONObject("extended_entities").getJSONArray("media");
+////            for (int i = 0; i < mediaObjects.length(); i++) {
+////                tweet.imageUrls.add(mediaObjects.getJSONObject(i).getString("media_url_https"));
+//            }
+//        }else{
+//            tweet.imageUrls = new ArrayList<>();
+//        }
 
+        tweet.imageUrls = new ArrayList<>();
+        if (jsonObject.has("extended_entities")){
+            JSONObject extended_entities = jsonObject.getJSONObject("extended_entities");
+            if (extended_entities.has("media")) {
+                JSONArray mediaObjects = extended_entities.getJSONArray("media");
+                for (int i = 0; i < mediaObjects.length(); i++) {
+                    if (mediaObjects.getJSONObject(i).has("media_url_https"))
+                        tweet.imageUrls.add(mediaObjects.getJSONObject(i).getString("media_url_https"));
+                }
+            }
+        }
         return tweet;
 
     }

@@ -47,7 +47,7 @@ I added an extended image recycler view for tweets with multiple images. I also 
 
 Here's a walkthrough of implemented user stories:
 
-<img src=''/>
+<img src='/Twitter.gif'/>
 
 GIF created with [Kap](https://getkap.co/).
 

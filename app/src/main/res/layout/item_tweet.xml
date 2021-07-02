@@ -27,7 +27,7 @@
         android:layout_toEndOf="@id/ivProfileImage"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="14sp"
+        android:textSize="16sp"
         tools:text="Nicholas Gonzalez" />
 
     <TextView
@@ -39,7 +39,7 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@id/tvName"
         tools:text="ngloading"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textColor="@color/light_gray"/>
 
     <TextView
@@ -58,14 +58,14 @@
 
     <TextView
         android:id="@+id/tvTimeStamp"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginLeft="3dp"
-        android:layout_toEndOf="@+id/tvScreenName"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="2dp"
+        android:layout_below="@id/tvBody"
+        android:layout_toEndOf="@id/ivProfileImage"
+        android:textSize="16sp"
         android:textColor="@color/light_gray"
-        android:textSize="14sp"
         tools:text="11m" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -75,7 +75,7 @@
         android:layout_marginTop="2dp"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@id/ivProfileImage"
-        android:layout_below="@id/tvBody"
+        android:layout_below="@id/tvTimeStamp"
         android:layout_marginStart="5dp"/>
 
     <ImageView
@@ -86,7 +86,7 @@
         android:layout_marginTop="2dp"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@id/ivProfileImage"
-        android:layout_below="@id/tvBody"
+        android:layout_below="@id/tvTimeStamp"
         android:layout_marginStart="5dp"/>
 
     <LinearLayout
@@ -95,19 +95,14 @@
         android:layout_height="20dp"
         android:orientation="horizontal"
         android:weightSum="3"
-        android:layout_marginTop="15dp"
-        android:layout_toEndOf="@+id/ivProfileImage"
-        android:layout_below="@id/tvBody"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        >
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/ivProfileImage">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_weight="1"
-            >
+            android:layout_weight="1">
 
             <ImageButton
                 android:layout_marginTop="2dp"

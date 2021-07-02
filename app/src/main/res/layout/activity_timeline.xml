@@ -16,7 +16,7 @@
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
-        android:layout_height="685dp"
+        android:layout_height="630dp"
         android:layout_alignParentTop="true">
 
         <androidx.recyclerview.widget.RecyclerView

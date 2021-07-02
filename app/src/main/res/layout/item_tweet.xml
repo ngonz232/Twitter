@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="5dp">
-
-    <TextView
-        android:id="@+id/tvScreenName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_margin="5dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_toEndOf="@+id/tvName"
-        android:text="TextView" />
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/ivProfileImage"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_margin="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="5dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -31,144 +22,160 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_margin="5dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="0dp"
-        android:layout_toEndOf="@+id/ivProfileImage"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@id/ivProfileImage"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
         tools:text="Nicholas Gonzalez" />
 
+    <TextView
+        android:id="@+id/tvScreenName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@id/tvName"
+        tools:text="ngloading"
+        android:textSize="16sp"
+        android:textColor="@color/light_gray"/>
 
     <TextView
         android:id="@+id/tvBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvTimeStamp"
-        android:layout_margin="5dp"
+        android:layout_below="@id/tvScreenName"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_toEndOf="@+id/ivProfileImage"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@id/ivProfileImage"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:autoLink="all"
+        android:linksClickable="true"
         tools:text="Hello, World!" />
 
     <TextView
         android:id="@+id/tvTimeStamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginLeft="3dp"
         android:layout_toEndOf="@+id/tvScreenName"
-        tools:text="5h" />
+        android:textColor="@color/light_gray"
+        android:textSize="14sp"
+        tools:text="11m" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvImages"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="145dp" />
+        android:layout_marginTop="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/ivProfileImage"
+        android:layout_below="@id/tvBody"
+        android:layout_marginStart="5dp"/>
 
     <ImageView
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-5dp"
-        android:layout_marginTop="76dp" />
+        android:adjustViewBounds="true"
+        android:layout_marginTop="2dp"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/ivProfileImage"
+        android:layout_below="@id/tvTimeStamp"
+        android:layout_marginStart="5dp"/>
 
     <LinearLayout
         android:id="@+id/btnRow"
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:layout_below="@+id/rvImages"
-        android:layout_marginTop="5dp"
-        android:layout_toEndOf="@+id/ivProfileImage"
         android:orientation="horizontal"
-        android:weightSum="3">
+        android:weightSum="3"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/rvImages"
+        android:layout_toEndOf="@+id/ivProfileImage">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <ImageButton
+                android:layout_marginTop="2dp"
                 android:id="@+id/imgBtnReply"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="2dp"
                 android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
+                android:layout_marginStart="4dp"
+                android:background="@android:color/transparent"
                 android:tint="@color/light_gray"
-                app:srcCompat="@drawable/ic_outline_chat_bubble_outline_24" />
+                app:srcCompat="@drawable/ic_outline_chat_bubble_outline_24"/>
 
             <TextView
                 android:id="@+id/tvReplyCount"
+                android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
-                android:textColor="@color/light_gray"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/light_gray"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <ImageButton
                 android:id="@+id/imgBtnRetweet"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="4dp"
                 android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
+                android:layout_marginStart="4dp"
+                android:background="@android:color/transparent"
                 android:tint="@color/light_gray"
                 app:srcCompat="@drawable/ic_vector_retweet_stroke" />
 
             <TextView
                 android:id="@+id/tvRetweetCount"
+                android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
-                android:text="11"
                 android:textColor="@color/light_gray"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:text="7"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <ImageButton
                 android:id="@+id/imgBtnFavorite"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="4dp"
                 android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
+                android:layout_marginStart="4dp"
+                android:background="@android:color/transparent"
                 android:tint="@color/light_gray"
                 app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
 
             <TextView
                 android:id="@+id/tvFavoriteCount"
+                android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
-                android:text="7"
+                android:textSize="16sp"
                 android:textColor="@color/light_gray"
-                android:textSize="16sp" />
+                android:text="11"/>
         </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>
